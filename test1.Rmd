@@ -1,0 +1,52 @@
+---
+title: "TEST"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## GitHub Documents
+
+This is an R Markdown format used for publishing markdown documents to GitHub. When you click the **Knit** button all R code chunks are run and a markdown file (.md) suitable for publishing to GitHub is generated.
+
+## Including Code
+
+READING IN CITY MORPHOLOGY DATA 
+
+```{r cars}
+morpho <-st_read('city_morpho/GR_UNITS_20190122.shp')
+head(morpho)
+```
+There are a lot of columns - we only need a few.  
+
+READING IN POLLUTION DATA 
+```{r cars}
+read_csv("winterpol1920/airtube-data-BG-201911.csv.gz") -> nov
+nov %>% write_csv("airtube-data-BG-201911.csv")
+
+read_csv("winterpol1920/airtube-data-BG-201912.csv.gz") -> dec
+dec %>% write_csv("airtube-data-BG-201912.csv")
+
+read_csv("winterpol1920/airtube-data-BG-202001.csv.gz") -> jan
+jan %>% write_csv("airtube-data-BG-202001.csv")
+
+read_csv("winterpol1920/airtube-data-BG-202002.csv.gz") -> feb
+feb %>% write_csv("airtube-data-BG-202002.csv")
+
+read_csv("winterpol1920/airtube-data-BG-202003.csv.gz") -> mar
+mar %>% write_csv("airtube-data-BG-202003.csv")
+head(mar)
+```
+
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
